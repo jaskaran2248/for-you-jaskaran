@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>
+        Chandigarh University - Confirmation
+    </title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+    <img src = "main.png" >
+
+    <div class="overlay">
+
+        <div class="confirmation-box">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <h1>
+                Registration Successful!
+            </h1>
+
+            <p class="success-message">
+                Thank you for registering with
+                Chandigarh University.
+            </p>
+
+
+            <div class="student-details">
+
+                <h2>
+                    Submitted Information
+                </h2>
+
+
+                <div class="detail">
+                    <span>Full Name</span>
+                    <strong id="name"></strong>
+                </div>
+
+
+                <div class="detail">
+                    <span>Email</span>
+                    <strong id="email"></strong>
+                </div>
+
+
+                <div class="detail">
+                    <span>Mobile Number</span>
+                    <strong id="phone"></strong>
+                </div>
+
+
+                <div class="detail">
+                    <span>Date of Birth</span>
+                    <strong id="dob"></strong>
+                </div>
+
+
+                <div class="detail">
+                    <span>Gender</span>
+                    <strong id="gender"></strong>
+                </div>
+
+
+                <div class="detail">
+                    <span>Course</span>
+                    <strong id="course"></strong>
+                </div>
+
+
+                <div class="detail">
+                    <span>City</span>
+                    <strong id="city"></strong>
+                </div>
+
+
+                <div class="detail">
+                    <span>Address</span>
+                    <strong id="address"></strong>
+                </div>
+
+            </div>
+
+
+            <a href="registration.html">
+
+                <button class="back-button">
+                    Register Another Student
+                </button>
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        // Get stored student data
+        let data =
+            sessionStorage.getItem("studentData");
+
+
+        if (data) {
+
+            let student =
+                JSON.parse(data);
+
+
+            document.getElementById("name")
+                .textContent = student.name;
+
+            document.getElementById("email")
+                .textContent = student.email;
+
+            document.getElementById("phone")
+                .textContent = student.phone;
+
+            document.getElementById("dob")
+                .textContent = student.dob;
+
+            document.getElementById("gender")
+                .textContent = student.gender;
+
+            document.getElementById("course")
+                .textContent = student.course;
+
+            document.getElementById("city")
+                .textContent = student.city;
+
+            document.getElementById("address")
+                .textContent = student.address;
+
+        }
+
+        else {
+
+            window.location.href =
+                "registration.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

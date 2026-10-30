@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chandigarh University | Home</title>
+  <style>
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #222;
+      background-color: #f4f4f4;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 70px;
+      background-color: #b70b0b;   
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 25px;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.4);
+    }
+
+    .navbar .logo-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .navbar .logo-box img {
+      height: 50px;
+      background-color: #ffffff;
+      padding: 4px 8px;
+      border-radius: 4px;
+    }
+
+    .navbar ul {
+      list-style: none;
+      align-items: center;
+      display: flex;
+    }
+
+    .navbar ul li {
+      margin-left: 25px;
+    }
+
+    .navbar ul li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 17px;
+      font-weight: bold;
+      padding: 8px 10px;
+      transition: color 0.3s ease;
+    }
+
+    .navbar ul li a:hover,
+    .navbar ul li a.active {
+      color: #ffd54a;
+      border-bottom: 3px solid #ffd54a;
+    }
+
+    .page-content {
+      margin-top: 70px;
+    }
+
+    .home-hero {
+      height: 100vh;
+      width: 100%;
+      background-image: url('main.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    .home-hero .overlay {
+      background-color: rgba(0, 0, 0, 0.45);
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-top: 70px;
+    }
+
+    marquee.welcome-marquee {
+      font-size: 42px;
+      font-weight: bold;
+      color: #ffd54a;
+      text-shadow: 2px 2px 6px #000;
+      width: 90%;
+    }  
+
+    .home-hero p.tagline {
+      color: #ffffff;
+      font-size: 20px;
+      margin-top: 20px;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+  </style>
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo-box">
+      <img src="data:image/png;base64,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" alt="Chandigarh University Logo">
+    </div>
+      <ul>
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="tags.html">HTML Tags Demo</a></li>
+      <li><a href="timetable.html">Time Table</a></li>
+    </ul>
+  </nav>
+
+  <section class="home-hero">
+    <div class="overlay">
+
+      <marquee class="welcome-marquee" direction="left" scrolldelay="90" behavior="scroll" loop="-1">
+        WELCOME THE CHANDIGARH UNIVERSITY
+      </marquee>
+
+      <p class="tagline">Discover. Learn. Empower.</p>
+    </div>
+  </section>
+
+</body>
+</html>

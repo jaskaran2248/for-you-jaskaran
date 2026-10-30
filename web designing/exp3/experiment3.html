@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LearnHub - Learning Resources</title>
+
+</head>
+
+
+<body style="
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+">
+
+
+    <!-- ================================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================================= -->
+
+    <nav style="
+        background: linear-gradient(
+            90deg,
+            #020617,
+            #111827,
+            #1e1b4b
+        );
+        padding: 18px 25px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+    ">
+
+
+        <div style="
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        ">
+
+
+            <!-- WEBSITE LOGO -->
+
+            <a href="#home" style="
+                color: white;
+                text-decoration: none;
+                font-size: 28px;
+                font-weight: bold;
+                letter-spacing: 1px;
+            ">
+
+                📚 Learn<span style="
+                    color: #a78bfa;
+                ">Hub</span>
+
+            </a>
+
+
+
+            <!-- NAVIGATION LINKS -->
+
+            <div style="
+                display: flex;
+                align-items: center;
+                gap: 30px;
+            ">
+
+
+                <a href="#home" style="
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: bold;
+                ">
+                    Home
+                </a>
+
+
+                <a href="#resources" style="
+                    color: #ffffff;
+                    text-decoration: none;
+                    font-size: 16px;
+                    font-weight: bold;
+                ">
+                    Resources
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================================================= -->
+    <!-- HERO SECTION -->
+    <!-- ================================================= -->
+
+    <section id="home" style="
+        background: linear-gradient(
+            135deg,
+            #020617,
+            #1e1b4b,
+            #312e81
+        );
+        color: white;
+        padding: 90px 20px;
+        text-align: center;
+    ">
+
+
+        <h1 style="
+            font-size: 48px;
+            margin: 0 0 20px 0;
+        ">
+            Learn. Explore. Grow.
+        </h1>
+
+
+        <p style="
+            max-width: 750px;
+            margin: 0 auto;
+            color: #cbd5e1;
+            font-size: 18px;
+            line-height: 1.7;
+        ">
+
+            Discover useful learning resources for programming,
+            cybersecurity, databases, artificial intelligence,
+            operating systems and web development.
+
+        </p>
+
+
+    </section>
+
+
+
+    <!-- ================================================= -->
+    <!-- LEARNING RESOURCES -->
+    <!-- ================================================= -->
+
+    <section id="resources" style="
+        max-width: 1200px;
+        margin: auto;
+        padding: 70px 20px;
+    ">
+
+
+        <h2 style="
+            text-align: center;
+            font-size: 36px;
+            color: #1e293b;
+            margin-bottom: 10px;
+        ">
+
+            Learning Resources
+
+        </h2>
+
+
+        <p style="
+            text-align: center;
+            color: #64748b;
+            font-size: 17px;
+            margin-bottom: 45px;
+        ">
+
+            Explore our collection of educational resources
+            and improve your technical skills.
+
+        </p>
+
+
+
+        <!-- ================================================= -->
+        <!-- RESOURCE CARDS -->
+        <!-- ================================================= -->
+
+        <div id="resourceContainer" style="
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        ">
+
+
+
+            <!-- ================= PROGRAMMING ================= -->
+
+            <div
+                class="resourceCard"
+                data-title="
+                    Programming HTML CSS JavaScript Python
+                    C C++ Java Coding
+                "
+                style="
+                    background-color: white;
+                    padding: 30px;
+                    border-radius: 16px;
+                    border-top: 5px solid #7c3aed;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+                "
+            >
+
+                <div style="
+                    font-size: 45px;
+                    margin-bottom: 15px;
+                ">
+                    💻
+                </div>
+
+
+                <h3 style="
+                    font-size: 23px;
+                    color: #1e293b;
+                    margin-top: 0;
+                ">
+                    Programming
+                </h3>
+
+
+                <p style="
+                    color: #64748b;
+                    line-height: 1.7;
+                ">
+                    Learn programming languages such as
+                    Python, C, C++, Java, HTML, CSS and JavaScript.
+                </p>
+
+
+                <a href="#" style="
+                    color: #7c3aed;
+                    text-decoration: none;
+                    font-weight: bold;
+                ">
+                    Explore Resources →
+                </a>
+
+            </div>
+
+
+
+            <!-- ================= CYBERSECURITY ================= -->
+
+            <div
+                class="resourceCard"
+                data-title="
+                    Cybersecurity Ethical Hacking
+                    Network Security SOC Information Security
+                "
+                style="
+                    background-color: white;
+                    padding: 30px;
+                    border-radius: 16px;
+                    border-top: 5px solid #0891b2;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+                "
+            >
+
+                <div style="
+                    font-size: 45px;
+                    margin-bottom: 15px;
+                ">
+                    🔐
+                </div>
+
+
+                <h3 style="
+                    font-size: 23px;
+                    color: #1e293b;
+                    margin-top: 0;
+                ">
+                    Cybersecurity
+                </h3>
+
+
+                <p style="
+                    color: #64748b;
+                    line-height: 1.7;
+                ">
+                    Study ethical hacking, network security,
+                    SOC operations and information security.
+                </p>
+
+
+                <a href="#" style="
+                    color: #0891b2;
+                    text-decoration: none;
+                    font-weight: bold;
+                ">
+                    Explore Resources →
+                </a>
+
+            </div>
+
+
+
+            <!-- ================= DATABASE ================= -->
+
+            <div
+                class="resourceCard"
+                data-title="
+                    Database DBMS SQL MySQL
+                    PostgreSQL Normalization
+                "
+                style="
+                    background-color: white;
+                    padding: 30px;
+                    border-radius: 16px;
+                    border-top: 5px solid #059669;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+                "
+            >
+
+                <div style="
+                    font-size: 45px;
+                    margin-bottom: 15px;
+                ">
+                    🗄️
+                </div>
+
+
+                <h3 style="
+                    font-size: 23px;
+                    color: #1e293b;
+                    margin-top: 0;
+                ">
+                    Database
+                </h3>
+
+
+                <p style="
+                    color: #64748b;
+                    line-height: 1.7;
+                ">
+                    Learn SQL, DBMS, MySQL, normalization,
+                    transactions and database management.
+                </p>
+
+
+                <a href="#" style="
+                    color: #059669;
+                    text-decoration: none;
+                    font-weight: bold;
+                ">
+                    Explore Resources →
+                </a>
+
+            </div>
+
+
+
+            <!-- ================= AI ================= -->
+
+            <div
+                class="resourceCard"
+                data-title="
+                    Artificial Intelligence AI
+                    Machine Learning ML Data Science
+                "
+                style="
+                    background-color: white;
+                    padding: 30px;
+                    border-radius: 16px;
+                    border-top: 5px solid #ea580c;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.10);
+                "
+            >
+
+                <div style="
+                    font-size: 45px;
+                    margin-bottom: 15px;
+                ">
+                    🤖
+                </div>
+
+
+                <h3 style="
+                    font-size: 23px;
+                    color: #1e293b;
+                    margin-top: 0;
+                ">
+                    AI & Machine Learning
+                </h3>
+
+
+                <p style="
+                    color: #64748b;
+                    line-height: 1.7;
+                ">
+                    Explore artificial intelligence,
+                    machine learning, algorithms and data science.
+                </p>
+
+
+                <a href="#" style="
+                    color: #ea580c;
+                    text-decoration: none;
+                    font-weight: bold;
+                ">
+                    Explore Resources →
+                </a>
+
+            </div></div>
+
+
+
+        <!-- NO RESULTS -->
+
+        <div id="noResults" style="
+            display: none;
+            text-align: center;
+            padding: 50px 20px;
+            color: #64748b;
+            font-size: 19px;
+        ">
+
+            ❌ No learning resources found.
+
+            <br>
+
+            <span style="
+                font-size: 15px;
+            ">
+                Try searching for Python, Cybersecurity,
+                Database, AI or Web Development.
+            </span>
+
+        </div>
+
+
+    </section>
+    <!-- SIMPLE FOOTER -->
+    <footer style="
+        background-color: #020617;
+        color: white;
+        text-align: center;
+        padding: 20px;
+    ">
+        <p style="margin: 0;">
+            © 2026 LearnHub. All Rights Reserved.
+        </p>
+    </footer>
+
+
+</body>
+
+</html>

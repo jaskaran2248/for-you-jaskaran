@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM and Mouse Events Practical</title>
+
+    <style>
+        /* Basic page styling */
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        header {
+            text-align: center;
+            background: #1d4ed8;
+            color: white;
+            padding: 25px 15px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            margin-top: 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section {
+            background: white;
+            padding: 22px;
+            margin-bottom: 25px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #00000010;
+        }
+
+        h2 {
+            color: #1d4ed8;
+            margin-top: 0;
+        }
+
+        button {
+            background: #2563eb;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            margin: 5px 3px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #1e40af;
+        }
+
+        .output {
+            margin-top: 15px;
+            padding: 15px;
+            background: #eff6ff;
+            border-left: 4px solid #2563eb;
+            border-radius: 5px;
+            min-height: 45px;
+            overflow-wrap: anywhere;
+        }
+
+        .demo-box {
+            background: #e0f2fe;
+            border: 2px dashed #0284c7;
+            border-radius: 10px;
+            padding: 30px 15px;
+            margin-top: 15px;
+            text-align: center;
+            min-height: 130px;
+        }
+
+        .mouse-box {
+            background: #dbeafe;
+            border: 2px solid #60a5fa;
+            border-radius: 10px;
+            padding: 35px 15px;
+            margin-top: 15px;
+            text-align: center;
+            cursor: crosshair;
+            user-select: none;
+        }
+
+        .hover-box {
+            background: #fef3c7;
+            padding: 20px;
+            margin-top: 15px;
+            text-align: center;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .hello-box {
+            text-align: center;
+            padding: 25px;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+
+        #helloButton {
+            background: #16a34a;
+            padding: 14px 35px;
+            font-size: 18px;
+        }
+
+        #helloButton:hover {
+            background: #15803d;
+        }
+
+        .sample-item {
+            display: inline-block;
+            padding: 8px 12px;
+            margin: 5px;
+            background: #dcfce7;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            color: #64748b;
+            padding: 15px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+
+            .section {
+                padding: 15px;
+            }
+
+            button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>JavaScript Practical</h1>
+    <p>DOM Functions and Mouse Events</p>
+    <p>Web Technologies Laboratory</p>
+</header>
+
+<div class="container">
+
+    <!-- PRACTICAL A: DOM FUNCTIONS -->
+    <section class="section">
+        <h2>(a) Various Functions of DOM</h2>
+        <p>
+            Click the buttons below to demonstrate different
+            Document Object Model (DOM) functions.
+        </p>
+
+        <!-- Elements used for DOM selection demonstrations -->
+        <div id="demoId">This element has the ID "demoId".</div>
+
+        <p class="sample-class">Sample paragraph 1</p>
+        <p class="sample-class">Sample paragraph 2</p>
+
+        <div class="demo-box" id="domArea">
+            <p>DOM demonstration area</p>
+            <p class="dom-item">First item</p>
+            <p class="dom-item">Second item</p>
+        </div>
+
+        <h3>DOM Function Buttons</h3>
+
+        <button onclick="showById()">getElementById()</button>
+        <button onclick="showByClass()">getElementsByClassName()</button>
+        <button onclick="showByTag()">getElementsByTagName()</button>
+        <button onclick="showQuery()">querySelector()</button>
+        <button onclick="showQueryAll()">querySelectorAll()</button>
+        <button onclick="createItem()">createElement() &amp; appendChild()</button>
+        <button onclick="removeItem()">remove()</button>
+        <button onclick="showInnerHTML()">innerHTML</button>
+        <button onclick="showTextContent()">textContent</button>
+
+        <div class="output" id="domOutput" aria-live="polite">
+            DOM function results will appear here.
+        </div>
+    </section>
+
+    <!-- PRACTICAL B: MOUSE EVENTS -->
+    <section class="section">
+        <h2>(b) onmousemove and onmouseover Events</h2>
+
+        <h3>1. onmousemove Event</h3>
+        <p>Move your mouse pointer inside the box to see its coordinates.</p>
+
+        <div class="mouse-box"
+             id="mouseArea"
+             onmousemove="showCoordinates(event)">
+            Move your mouse inside this area
+            <p id="coordinates">X: 0 | Y: 0</p>
+        </div>
+
+        <h3>2. onmouseover Event</h3>
+        <p>Move your pointer over the yellow box to change its color.</p>
+
+        <div class="hover-box"
+             id="hoverArea"
+             onmouseover="changeHoverColor()">
+            Move the mouse pointer over me!
+            <p id="hoverMessage">Waiting for mouse-over...</p>
+        </div>
+
+        <button onclick="resetMouseDemo()">Reset Mouse Demonstration</button>
+
+        <div class="output" id="mouseOutput" aria-live="polite">
+            Mouse event results will appear here.
+        </div>
+    </section>
+
+    <!-- PRACTICAL C: CLICK AND DOUBLE-CLICK -->
+    <section class="section">
+        <h2>(c) onclick and ondblclick Events</h2>
+
+        <p>
+            Click the Hello button once to display a welcome message.
+            Double-click it to display the thank-you message.
+        </p>
+
+        <div class="hello-box">
+            <button id="helloButton"
+                    onclick="welcomeMessage()"
+                    ondblclick="thankYouMessage()">
+                Hello
+            </button>
+
+            <div class="output" id="helloOutput" aria-live="polite">
+                Your message will appear here.
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<footer>
+    <p>JavaScript DOM and Events Practical | Web Technologies</p>
+</footer>
+
+<script>
+    // PRACTICAL A: DOM FUNCTIONS
+
+    // 1. Select an element using its ID.
+    function showById() {
+        let element = document.getElementById("demoId");
+
+        document.getElementById("domOutput").textContent =
+            "getElementById(): " + element.textContent;
+    }
+
+    // 2. Select elements using their class name.
+    function showByClass() {
+        let elements = document.getElementsByClassName("sample-class");
+        let result = "";
+
+        for (let i = 0; i < elements.length; i++) {
+            result += elements[i].textContent + " | ";
+        }
+
+        document.getElementById("domOutput").textContent =
+            "getElementsByClassName(): Found " +
+            elements.length + " elements. " + result;
+    }
+
+    // 3. Select elements using their HTML tag name.
+    function showByTag() {
+        let elements = document.getElementsByTagName("p");
+
+        document.getElementById("domOutput").textContent =
+            "getElementsByTagName(): Found " +
+            elements.length + " paragraph elements.";
+    }
+
+    // 4. Select the first matching CSS selector.
+    function showQuery() {
+        let element = document.querySelector(".dom-item");
+
+        document.getElementById("domOutput").textContent =
+            "querySelector(): " + element.textContent;
+    }
+
+    // 5. Select all matching CSS selectors.
+    function showQueryAll() {
+        let elements = document.querySelectorAll(".dom-item");
+        let result = "";
+
+        elements.forEach(function(element) {
+            result += element.textContent + " | ";
+        });
+
+        document.getElementById("domOutput").textContent =
+            "querySelectorAll(): Found " +
+            elements.length + " elements. " + result;
+    }
+
+    // 6. Create a new element and add it to the page.
+    function createItem() {
+        let newElement = document.createElement("p");
+        newElement.className = "dom-item";
+        newElement.textContent = "New item created using JavaScript!";
+
+        document.getElementById("domArea").appendChild(newElement);
+
+        document.getElementById("domOutput").textContent =
+            "createElement() and appendChild(): New item added.";
+    }
+
+    // 7. Remove the most recently added item.
+    function removeItem() {
+        let items = document.querySelectorAll(
+            "#domArea .dom-item"
+        );
+
+        if (items.length > 2) {
+            items[items.length - 1].remove();
+
+            document.getElementById("domOutput").textContent =
+                "remove(): The last added item has been removed.";
+        } else {
+            document.getElementById("domOutput").textContent =
+                "No extra item to remove. Create a new item first.";
+        }
+    }
+
+    // 8. Demonstrate innerHTML.
+    function showInnerHTML() {
+        document.getElementById("domOutput").innerHTML =
+            "<strong>innerHTML:</strong> This message contains " +
+            "<em>HTML formatting</em>.";
+    }
+
+    // 9. Demonstrate textContent.
+    function showTextContent() {
+        document.getElementById("domOutput").textContent =
+            "textContent: <strong>This is plain text.</strong>";
+    }
+
+
+    // PRACTICAL B: MOUSE EVENTS
+
+    // Display the mouse pointer's coordinates inside the box.
+    function showCoordinates(event) {
+        let box = document.getElementById("mouseArea");
+        let rect = box.getBoundingClientRect();
+
+        // Calculate coordinates relative to the demonstration box.
+        let x = Math.round(event.clientX - rect.left);
+        let y = Math.round(event.clientY - rect.top);
+
+        document.getElementById("coordinates").textContent =
+            "X: " + x + " | Y: " + y;
+    }
+
+    // Change the box's color when the mouse moves over it.
+    function changeHoverColor() {
+        let box = document.getElementById("hoverArea");
+
+        box.style.backgroundColor = "#bbf7d0";
+
+        document.getElementById("hoverMessage").textContent =
+            "Mouse pointer is over this element!";
+
+        document.getElementById("mouseOutput").textContent =
+            "onmouseover event triggered successfully.";
+    }
+
+    // Restore the original mouse demonstration appearance.
+    function resetMouseDemo() {
+        document.getElementById("mouseArea").style.backgroundColor =
+            "#dbeafe";
+
+        document.getElementById("coordinates").textContent =
+            "X: 0 | Y: 0";
+
+        document.getElementById("hoverArea").style.backgroundColor =
+            "#fef3c7";
+
+        document.getElementById("hoverMessage").textContent =
+            "Waiting for mouse-over...";
+
+        document.getElementById("mouseOutput").textContent =
+            "Mouse demonstration has been reset.";
+    }
+
+
+    // PRACTICAL C: CLICK AND DOUBLE-CLICK EVENTS
+
+    // Display a message when the button is clicked once.
+    function welcomeMessage() {
+        document.getElementById("helloOutput").textContent =
+            "Welcome to scripting";
+    }
+
+    // Display a message when the button is double-clicked.
+    function thankYouMessage() {
+        document.getElementById("helloOutput").textContent =
+            "Thank you for using scripting";
+    }
+</script>
+
+</body>
+</html>

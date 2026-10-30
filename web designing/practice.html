@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <font color = "green"><h1>Prompt Popup Demo </h1></font>
+    <script>
+        function getPromotDetails(){
+    var age = prompt("How old are you?");
+    document.write("my name is: "+name+",<br>");
+    document.write("my name is: "+age);
+    }
+    getPromptDetails();
+      </script>
+    
+    </body>
+</html>
+
+<body>
+    <script type = "text/javascript">
+        function printvalue(){
+            var name = document.form1.name.value;
+            alert("welcome: "+name);
+        }
+    </script>
+
+    <form name = "form1">
+        enter name: <input type = "text" name = "name"/>
+        <input type = "button" onclick= = "printvalue()" value = "print name"/>
+    </form>
+</body>
+
+<script type = "text/javascript">
+    function getcube(){
+        var number = document.getElementById("number").value;
+        alert(number*number*number);
+    }
+</script>
+
+<form>
+    Enter No: <input type = "text" id = "number" name = "number"/><br/>
+    <input type = "button" value = "cube" onclick = "getcube()"/>
+</form>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>DOM getElementsByName()</title>
+        <script>
+            function geeks(){
+                alert(document.getElementsByName("ga")[0].value);
+            }
+        </script>
+    </head>
+    <body>
+        <h2>DOM getElementsByName() Method</h2>
+        <input type = "text" name = "ga" />
+        <br>
+        <br>
+        <input type = "button" onclick = "geeks()" value = "Click Here"/>
+        <p></p>
+    </body>
+</html>

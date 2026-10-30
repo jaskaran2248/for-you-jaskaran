@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 100vh;
+
+    /* Uploaded Chandigarh University image */
+    background-image: url("main(3).jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Light dark layer — keeps the background clearly visible */
+.overlay {
+    min-height: 100vh;
+    width: 100%;
+
+    background: rgba(0, 0, 0, 0.18);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px 15px;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Transparent registration form */
+.registration-box {
+    width: 850px;
+    max-width: 100%;
+
+    /* Transparent white background */
+    background: rgba(255, 255, 255, 0.45);
+
+    /* Glass effect */
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    border-radius: 15px;
+
+    padding: 30px 40px;
+
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.30);
+    animation: slideUp 1s ease-out;
+}
+
+/* Header */
+.header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    color: #c8102e;
+    font-size: 30px;
+    margin-bottom: 7px;
+    text-shadow: 1px 1px 2px white;
+}
+
+.header p {
+    color: #222;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+/* Two-column rows */
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+/* Form group */
+.form-group {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    color: #111;
+    margin-bottom: 7px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.7);
+}
+
+/* Input fields */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+
+    /* Semi-transparent fields */
+    background: rgba(255, 255, 255, 0.72);
+
+    border: 1px solid rgba(80, 80, 80, 0.55);
+    border-radius: 7px;
+
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #c8102e;
+    box-shadow: 0 0 5px rgba(200, 16, 46, 0.45);
+    background: rgba(255, 255, 255, 0.88);
+    transform: scale(1.02);
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Gender */
+.gender {
+    display: flex;
+    gap: 25px;
+    margin-top: 8px;
+}
+
+.gender label {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.gender input {
+    width: auto;
+}
+
+/* Terms */
+.terms {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 10px 0 20px;
+}
+
+.terms input {
+    width: auto;
+}
+
+.terms label {
+    font-size: 14px;
+    color: #111;
+    font-weight: bold;
+}
+
+/* Submit button */
+button {
+    width: 100%;
+    padding: 14px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #c8102e;
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    background: #970d23;
+    transform: translateY(-2px);
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+}
+
+button:hover::after {
+    animation: ripple 0.6s ease-out;
+}
+
+/* Mobile responsive */
+@media (max-width: 700px) {
+
+    .registration-box {
+        padding: 25px 20px;
+    }
+
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .gender {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes  ripple {
+    0% {
+        width: 5px;
+        height: 5px;
+        opacity: 0.5;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
